@@ -1,0 +1,61 @@
+<html>
+    <head>
+    <title>------배열 메서드-------</title>
+    <script language = "javascript">
+        var Ary = [];  //배열 선언
+        var obj_output = document.getElementById("now_data"); // 모든 함수에서 쓰는거라 외부로 빼봄
+        
+
+        function savearray(){   // 배열 값 출력하기
+            var obj_input = document.getElementById("arrayinput").value;
+            Ary.push(obj_input);
+            var obj_output = document.getElementById("now_data");
+            obj_output.innerHTML = Ary;
+        }
+
+        function Ushift(){
+            Ary.shift();
+            obj_output = document.getElementById("now_data");
+            obj_output.innerHTML = Ary;
+        }
+
+        function Upop(){                                            // 쉬프트랑 팝 작동이 이상함
+            Ary.pop();
+            obj_output = document.getElementById("now_data");
+            obj_output.innerHTML = Ary;
+        }
+
+        function Ureverse(){
+            Ary= Ary.reverse();
+            obj_output = document.getElementById("now_data");
+            obj_output.innerHTML = Ary;
+        }
+
+        function Usort(){
+            Ary= Ary.sort(function(a, b) { // 오름차순 하는 공식
+            return a - b;
+            });
+            obj_output = document.getElementById("now_data");
+            obj_output.innerHTML = Ary;
+        }
+
+
+
+    </script>    
+    </head>
+    <body> 
+   <input type="text" size ="18" id="arrayinput">
+   <input type="button" style="width:150" value="배열에 추가하기" id="save_in_array"onclick="savearray()">
+   <br>
+   현재배열의 값 :<span id="now_data"></span><br>
+
+   <input type="button" style="width:150" align="center" value="Shift로 꺼내기" id="use_shift" onclick="Ushift()">
+   <input type="button" style="width:150" align="center" value="Pop으로 꺼내기" id="use_pop" onclick="Upop()"><br>
+
+   <input type="button" style="width:150" align="center" value="Reverse로 뒤집기" id="use_reverse" onclick="Ureverse()">
+   <input type="button" style="width:150" align="center" value="Sort로 정렬하기" id="use_sort" onclick="Usort()"><br>
+
+
+
+    </body>
+</html>
